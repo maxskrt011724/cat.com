@@ -1,0 +1,553 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #5a6e8f, #4a6076, #3b4f63); /* Metallic chic blue background */
+  color: #f1f1f1;
+  line-height: 1.6;
+  padding: 0 20px;
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
+  width: 100%;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: linear-gradient(135deg, #5a6e8f, #4a6076, #3b4f63);  /* Metallic chic blue background */
+  margin-bottom: 5px;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  float: left;
+  padding: 0 120px;
+}
+
+header .logo img {
+  max-width: 100px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+header .logo img:hover {
+  transform: rotate(360deg);
+}
+
+nav {
+  display: inline-block;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding-top: 5px;
+}
+
+header nav ul li {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0 10px;
+
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #a0b1c2;
+  padding: 8px 15px;
+  border-radius: 20px;
+  background-color: #2f3f54;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  color: #a0b1c2;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+header nav ul li a:hover {
+  background-color: #1e2a39;
+  transform: scale(1.1);
+}
+
+/* Welcome Banner */
+#welcome-banner {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 150px 20px;
+  text-align: center;
+  color: #f1f1f1;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  margin-top: 80px; /* Adjust for fixed header */
+}
+
+#welcome-banner h1 {
+  font-size: 3em;
+  color: #c7d8e4;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+  animation: textGlow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+  0% { text-shadow: 0 0 20px #c7d8e4, 0 0 30px #c7d8e4, 0 0 40px #c7d8e4; }
+  100% { text-shadow: 0 0 25px #006d9e, 0 0 35px #006d9e, 0 0 45px #006d9e; }
+}
+
+#welcome-banner p {
+  font-size: 1.2em;
+  color: #f1f1f1;
+}
+
+/* Section styles */
+section {
+
+  margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  position: relative;
+  scroll-margin-top: 120px; /* Use scroll-margin for automatic anchor offset */
+}
+
+section::before {
+  content: "";
+  background: url('https://source.unsplash.com/random') no-repeat center center/cover;
+  opacity: 0.15;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  z-index: -1;
+}
+
+h2 {
+  font-size: 2.5em;
+  color: #c7d8e4;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+#about-us {
+  background: #b3d9e6; /* Slightly darker metallic blue background */
+  padding: 60px 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+}
+
+
+#about-us h2 {
+  text-align: center;
+  color: #1a3551; /* Darker metallic blue for titles */
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#about-us .about-us-container {
+  background: #ffffff; /* White background for the container */
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0.9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+#about-us .about-us-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  background-color: #8bb8cc; /* Darker metallic blue hover effect */
+}
+
+#about-us p {
+  color: #333333;
+  line-height: 1.6;
+  font-size: 1.1em;
+  text-align: justify;
+  font-weight: 300;
+}
+
+#about-us p {
+  color: #333333;
+  line-height: 1.6;
+  font-size: 1.1em;
+  text-align: justify;
+  font-weight: 300;
+}
+
+/* Adoption Success Stories Section */
+#adoption-stories {
+  background: #6c7f92;
+  padding: 60px 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  margin-bottom: 50px;
+}
+
+#adoption-stories h2 {
+  text-align: center;
+  color: #c7d8e4;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#adoption-stories .intro-text {
+  text-align: center;
+  color: #c7d8e4;
+  font-size: 1.2em;
+  margin-bottom: 40px;
+}
+
+/* Stories Container */
+.stories {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Story Card Design */
+.story-card {
+  background: #3a4b63;
+  width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0.9;
+}
+
+.story-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  opacity: 1;
+}
+
+/* Story Image */
+.story-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 5px solid #f1f1f1;
+}
+
+/* Story Content */
+.story-content {
+  padding: 20px;
+}
+
+.story-content h3 {
+  font-size: 1.5em;
+  color: #f1f1f1;
+  margin-bottom: 15px;
+}
+
+.story-content p {
+  font-size: 1.1em;
+  color: #c7d8e4;
+}
+
+/* Available Cats (4 images in a row) */
+.cat-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.cat-card {
+  background: #3a4b63; /* Darker metallic chic blue */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.cat-card:hover {
+  transform: scale(1.05);
+}
+
+.cat-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.cat-card h3 {
+  font-size: 1.5em;
+  color: #f1f1f1;
+  margin-top: 15px;
+}
+
+.cat-card p {
+  font-size: 1.1em;
+  color: #c7d8e4;
+}
+
+/* FAQ Section */
+.faq-container {
+  margin-top: 40px;
+}
+
+.faq-item {
+  background: #3a4b63; /* Darker metallic chic blue */
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.faq-item:hover {
+  background-color: #2f3f54;
+}
+
+.faq-question {
+  font-size: 1.5em;
+  color: #f1f1f1;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.faq-answer {
+  font-size: 1.2em;
+  color: #c7d8e4;
+  margin-top: 10px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.faq-item:hover .faq-answer {
+  opacity: 1;
+  max-height: 200px; /* Adjust depending on the content */
+}
+
+/* 3D effect on elements */
+button, a {
+  background-color: #3a4b63;
+  border-radius: 50px;
+  padding: 15px 30px;
+  text-decoration: none;
+  color: #f1f1f1;
+  font-size: 1.2em;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+button:hover, a:hover {
+  background-color: #006d9e;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Contact Us */
+#contact-us {
+  background: #4a6076;
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+#contact-us p {
+  font-size: 1.2em;
+  color: #f1f1f1;
+  margin-bottom: 20px;
+}
+
+#contact-us a {
+  font-size: 1.3em;
+  color: #f1f1f1;
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #2f3f54;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#contact-us a:hover {
+  background-color: #1e2a39;
+  transform: scale(1.1);
+}
+
+/* Adoption Form */
+#adoption-form {
+  background: #5a6e8f;
+  padding: 40px 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+#adoption-form h2 {
+  text-align: center;
+  color: #c7d8e4;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+form label {
+  font-size: 1.2em;
+  color: #f1f1f1;
+  margin-bottom: 10px;
+  display: block;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid #006d9e;
+  font-size: 1em;
+  background-color: #f1f1f1;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+form button {
+  background-color: #3a4b63;
+  color: #f1f1f1;
+  font-size: 1.3em;
+  padding: 15px 30px;
+  border-radius: 30px;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+form button:hover {
+  background-color: #006d9e;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+footer{
+  text-align: center;
+}
+
+
+@media (max-width: 1024px) {
+  header {
+   position:fixed;
+   display: block;
+   max-width: 100%;
+  }
+
+  header .logo img {
+    display: flex;
+    max-width: 80px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+
+  @media (max-width: 768px) {
+    header {
+      display: flex; 
+      flex-direction: column;/* Makes header display as block on smaller screens */
+      position: fixed; /* Fixes the header position */
+    }
+  }
+
+  header nav ul li a {
+    list-style: inside; /* Ensures the list items inside the navigation are styled properly */
+    display: block; /* Displays the navigation links as block elements */
+    justify-content: right; /* Aligns links to the right */
+    gap: 10px; /* Adjusted spacing between the navigation items */
+    padding-top: 5px; /* Adds padding to the top of each link */
+    font-size: 0.7em; /* Adjusted font size for smaller screens */
+    max-height: fit-content; /* Ensures the navigation links fit their content */
+  }
+
+  #welcome-banner h1 {
+    font-size: 1.8em; /* Adjusts the font size for the welcome banner heading */
+  }
+
+  #welcome-banner p {
+    font-size: 0.9em; /* Adjusts the font size for the welcome banner paragraph */
+  }
+
+  section {
+    font-size: 0.9em; /* Adjusts font size for section content */
+  }
+}
+
+ 
+@media (max-width: 425px) {
+  header {
+    display: flex; /* Makes header display as block on smaller screens */
+    flex-direction: column;
+  }
+}
+
+header nav ul li a {
+  list-style: inside; /* Ensures the list items inside the navigation are styled properly */
+  display: block; /* Displays the navigation links as block elements */
+  justify-content: right; /* Aligns links to the right */
+  gap: 10px; /* Adjusted spacing between the navigation items */
+  padding-top: 5px; /* Adds padding to the top of each link */
+  font-size: 0.7em; /* Adjusted font size for smaller screens */
+  max-height: fit-content; /* Ensures the navigation links fit their content */
+}
+
+#welcome-banner h1 {
+  font-size: 1.8em; /* Adjusts the font size for the welcome banner heading */
+}
+
+#welcome-banner p {
+  font-size: 0.9em; /* Adjusts the font size for the welcome banner paragraph */
+}
+
+section {
+  font-size: 0.9em; /* Adjusts font size for section content */
+}
